@@ -116,5 +116,8 @@
       {% endif %}
     <script src="{{ url_for('static', filename='dist/js/app.min.js').lstrip('/') }}"></script>
     <script src="{{ url_for('static', filename='dist/js/statistics.min.js').lstrip('/') }}"></script>
+		{% if show.cookies %}
+	<script type="text/javascript" id="cookieinfo" src="//cookieinfoscript.com/js/cookieinfo.min.js"></script>
+	{% endif %}
 </body>
 </html>
