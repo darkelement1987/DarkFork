@@ -176,6 +176,9 @@ def get_args():
     parser.add_argument('-mpm', '--medalpokemon',
                         help='Show notify for tiny rattata and big magikarp.',
                         action='store_true', default=False)
+    parser.add_argument('-cc', '--cookies',
+                        help=('Enable cookie consent.'),
+                        action='store_true', default=False)
     parser.add_argument('-cs', '--captcha-solving',
                         help='Enables captcha solving.',
                         action='store_true', default=False)
@@ -996,7 +999,12 @@ def init_args(args):
             args.enc_whitelist_file))
         watchercfg['enc_whitelist'] = (args.enc_whitelist_file, None)
 
+    # Cookie consent
+    if args.cookies:
+        log.info("Cookie consent enabled")
+
     # Prepare webhook whitelist - empty list means no restrictions
+
     args.webhook_whitelist = []
     if args.webhook_whitelist_file:
         log.info("Watching webhook whitelist file {} for changes.".format(
