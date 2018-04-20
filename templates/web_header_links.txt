@@ -50,7 +50,7 @@
 }
 </style>
 
-<h1><a href="./"><img class='rocket icon' src='static/images/rocket.png'></a></h1>
+
 <h1>
         
           
