@@ -40,5 +40,8 @@
     <script src="{{ url_for('static', filename='dist/js/custom.min.js').lstrip('/') }}"></script>
       {% endif %}
 	<script src="{{ url_for('static', filename='dist/js/mobile.min.js').lstrip('/') }}"></script>
+		{% if show.cookies %}
+	<script type="text/javascript" id="cookieinfo" src="//cookieinfoscript.com/js/cookieinfo.min.js"></script>
+	{% endif %}
 </body>
 </html>
