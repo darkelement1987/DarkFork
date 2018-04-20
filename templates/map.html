@@ -49,6 +49,18 @@
       <!-- NAV -->
       <nav id="nav">
         <div id="nav-accordion">
+       	
+		<h3><i class="fa fa-graduation-cap fa-fw"></i>Learn More</h3>
+          <div>
+		    <img src="https://dpgmaps.com/wp-content/uploads/2018/04/ic_launcher.png" alt="logo" style="display: none;">
+			&nbsp;<img src="http://dpgmaps.com/patreon1.png" style="color:#286090" alt="patreon" height="14" width="15">&nbsp;&nbsp;<a href="https://www.patreon.com/dpgm" style="color:#286090;font-family: 'Open Sans',sans-serif; font-size: 12px;">Patreon</a> <br>
+            <i class="fa fa-paypal fa-fw"style="color:#286090"></i><a href="https://www.paypal.me/dpgmaps"style="color:#286090;font-family: 'Open Sans',sans-serif; font-size: 12px;">PayPal</a> <br>
+            <img src="http://dpgmaps.com/discord.png" style="color:#286090;padding-right:1px" alt="discord" height="14" width="17">&nbsp;&nbsp;<a href="https://discordapp.com/invite/pScQ562"style="color:#286090;font-family: 'Open Sans',sans-serif; font-size: 12px;">Discord</a> <br>
+			<i class="fa fa-leanpub fa-fw"style="color:#286090"></i><a href="https://dpgmaps.com/learnmore/"style="color:#286090;font-family: 'Open Sans',sans-serif; font-size: 12px;">Scan your City</a> <br>
+            <i class="fa fa-map fa-fw"style="color:#286090"></i><a href="https://dpgmaps.com/map-list/"style="color:#286090;font-family: 'Open Sans',sans-serif; font-size: 12px;">All maps</a> <br>
+            <br>
+      </div>
+		
           <h3><i class="fa fa-map-marker fa-fw"></i>Marker Settings</h3>
           <div>
 
@@ -750,5 +762,8 @@
     <script src="{{ url_for('static', filename='dist/js/weather.min.js').lstrip('/') }}"></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?key={{ gmaps_key }}&amp;callback=initMap&amp;libraries=places,geometry"></script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
-  </body>
+	{% if show.cookies %}
+	<script type="text/javascript" id="cookieinfo" src="//cookieinfoscript.com/js/cookieinfo.min.js"></script>
+	{% endif %}
+</body>
 </html> 
