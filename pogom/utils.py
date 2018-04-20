@@ -586,6 +586,9 @@ def get_args():
     parser.add_argument('-cc', '--cookies',
                         help=('Enable cookie consent.'),
                         action='store_true', default=False)
+    parser.add_argument('-cnb', '--customnavbar',
+                        help=('Enable custom navbar.'),
+                        action='store_true', default=False)
     parser.add_argument('-pgsu', '--pgscout-url', default=None,
                         help='URL to query PGScout for Pokemon IV/CP.')
     parser.add_argument('-lurl', '--lure-url', default=None,
