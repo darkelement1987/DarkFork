@@ -378,8 +378,8 @@ class Pogom(Flask):
             gmaps_key=args.gmaps_key,
             lang=args.locale,
             show=visibility_flags,
-            rarityFileName=args.rarity_filename),
-            cookies=args.cookies
+            rarityFileName=args.rarity_filename,
+            cookies=args.cookies)
 
     def raw_data(self):
         # Make sure fingerprint isn't blacklisted.
@@ -704,8 +704,8 @@ class Pogom(Flask):
             lng=self.current_location[1],
             generateImages=str(args.generate_images).lower(),
             gmaps_key=args.gmaps_key,
-            show=visibility_flags),
-            cookies=args.cookies
+            show=visibility_flags,
+            cookies=args.cookies)
 
     def get_gymdata(self):
         gym_id = request.args.get('id')
