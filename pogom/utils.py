@@ -585,7 +585,7 @@ def get_args():
                         action='store_true', default=False)
     parser.add_argument('-cc', '--cookies',
                         help=('Enable cookie consent.'),
-                        action='store_true', default=False)
+                        action='store_true', default=False)					
     parser.add_argument('-pgsu', '--pgscout-url', default=None,
                         help='URL to query PGScout for Pokemon IV/CP.')
     parser.add_argument('-lurl', '--lure-url', default=None,
@@ -1013,6 +1013,10 @@ def init_args(args):
         log.info("Watching encounter whitelist file {} for changes.".format(
             args.enc_whitelist_file))
         watchercfg['enc_whitelist'] = (args.enc_whitelist_file, None)
+
+    # Cookie consent
+    if args.cookies:
+	    log.info("Cookie consent enabled")
 
     # Prepare webhook whitelist - empty list means no restrictions
     args.webhook_whitelist = []
