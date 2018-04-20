@@ -21,6 +21,7 @@
 #gain-xp                        # Do various things to let map accounts gain XP and detect Ditto.
 #pogo-assets:                   # Directory pointing to optional PogoAssets root directory. (default=None)
 #generate-images                # Use ImageMagick to generate dynamic icons on demand.
+#customnavbar                   # Enable custom navbar. (default=False)
 
 # Required settings
 ###################
