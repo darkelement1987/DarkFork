@@ -1019,14 +1019,14 @@ def init_args(args):
 
     # Cookie consent
     if args.cookies:
-	    log.info("Cookie consent enabled")
+        log.info("Cookie consent enabled")
 
     # Custom navbar enabled/disabled
     if args.customnavbar:
         log.info("Custom navbar enabled")
     else:
         if not args.customnavbar:
-		    log.info ("Custom navbar disabled")
+            log.info ("Custom navbar disabled")
 
     # Prepare webhook whitelist - empty list means no restrictions
     args.webhook_whitelist = []
