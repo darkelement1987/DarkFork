@@ -1020,6 +1020,9 @@ def init_args(args):
     # Cookie consent
     if args.cookies:
         log.info("Cookie consent enabled")
+    else:
+        if not args.cookies:
+            log.info("Cookie consent disabled")
 
     # Custom navbar enabled/disabled
     if args.customnavbar:
