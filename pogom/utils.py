@@ -1002,6 +1002,9 @@ def init_args(args):
     # Cookie consent
     if args.cookies:
         log.info("Cookie consent enabled")
+    else:
+        if not args.cookies:
+            log.info("Cookie consent disabled")
 
     # Prepare webhook whitelist - empty list means no restrictions
 
