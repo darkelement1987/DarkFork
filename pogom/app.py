@@ -370,6 +370,7 @@ class Pogom(Flask):
             'fixed_display': not args.fixed_location,
             'custom_css': args.custom_css,
             'custom_js': args.custom_js,
+            'cookies': args.cookies,
             'medalpokemon': args.medalpokemon
         }
 
@@ -393,6 +394,7 @@ class Pogom(Flask):
             gmaps_key=args.gmaps_key,
             lang=args.locale,
             show=visibility_flags,
+            cookies=args.cookies,
             rarityFileName=args.rarity_filename)
 
     def raw_data(self):
@@ -717,6 +719,7 @@ class Pogom(Flask):
             lng=self.current_location[1],
             generateImages=str(args.generate_images).lower(),
             gmaps_key=args.gmaps_key,
+            cookies=args.cookies,
             show=visibility_flags)
 
     def get_gymdata(self):
