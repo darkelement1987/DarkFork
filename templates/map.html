@@ -44,7 +44,9 @@
       <!-- Header -->
       <header id="header">
         <a href="#nav"><span class="label">Options</span></a>
+				{% if show.customnavbar %}
 		        {% include 'web_header_links.txt' %}
+				{% endif %}
       </header>
       <!-- NAV -->
       <nav id="nav">
