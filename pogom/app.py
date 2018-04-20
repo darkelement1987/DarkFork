@@ -371,7 +371,8 @@ class Pogom(Flask):
             'custom_css': args.custom_css,
             'custom_js': args.custom_js,
             'cookies': args.cookies,
-            'medalpokemon': args.medalpokemon
+            'medalpokemon': args.medalpokemon,
+			'customnavbar': args.customnavbar
         }
 
         map_lat = False
@@ -395,7 +396,8 @@ class Pogom(Flask):
             lang=args.locale,
             show=visibility_flags,
             cookies=args.cookies,
-            rarityFileName=args.rarity_filename)
+            rarityFileName=args.rarity_filename,
+			customnavbar=args.customnavbar)
 
     def raw_data(self):
         # Make sure fingerprint isn't blacklisted.
