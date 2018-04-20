@@ -681,21 +681,24 @@ class Pogom(Flask):
         args = get_args()
         visibility_flags = {
             'custom_css': args.custom_css,
-            'custom_js': args.custom_js
+            'custom_js': args.custom_js,
+            'cookies': args.cookies
         }
 
         return render_template('mobile_list.html',
                                pokemon_list=pokemon_list,
                                origin_lat=lat,
                                origin_lng=lon,
-                               show=visibility_flags
+                               show=visibility_flags,
+                               cookies=args.cookies
                                )
 
     def get_stats(self):
         args = get_args()
         visibility_flags = {
             'custom_css': args.custom_css,
-            'custom_js': args.custom_js
+            'custom_js': args.custom_js,
+            'cookies': args.cookies
         }
 
         return render_template(
@@ -717,13 +720,16 @@ class Pogom(Flask):
         args = get_args()
         visibility_flags = {
             'custom_css': args.custom_css,
-            'custom_js': args.custom_js
+            'custom_js': args.custom_js,
+            'cookies': args.cookies
         }
         if args.status_page_password is None:
             abort(404)
 
         return render_template('status.html',
-                               show=visibility_flags)
+                               show=visibility_flags,
+                               cookies=args.cookies
+                              )
 
     def post_status(self):
         args = get_args()
