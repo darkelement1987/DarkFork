@@ -604,8 +604,6 @@ def get_args():
     parser.add_argument('-cnb', '--customnavbar',
                         help=('Enable custom navbar.'),
                         action='store_true', default=False)
-    parser.add_argument('-cl', '--customlink', default=None,
-                        help='URL to query PGScout for Pokemon IV/CP.')
     parser.add_argument('-pgsu', '--pgscout-url', default=None,
                         help='URL to query PGScout for Pokemon IV/CP.')
     parser.add_argument('-lurl', '--lure-url', default=None,
@@ -1039,14 +1037,14 @@ def init_args(args):
         log.info("Cookie consent enabled")
     else:
         if not args.cookies:
-		    log.info ("Cookie consent disabled")
+            log.info ("Cookie consent disabled")
 
     # Custom navbar enabled/disabled
     if args.customnavbar:
         log.info("Custom navbar enabled")
     else:
         if not args.customnavbar:
-		    log.info ("Custom navbar disabled")
+            log.info ("Custom navbar disabled")
 
     # Prepare webhook whitelist - empty list means no restrictions
     args.webhook_whitelist = []
