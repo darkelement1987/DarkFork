@@ -709,7 +709,7 @@ class Pogom(Flask):
         visibility_flags = {
             'custom_css': args.custom_css,
             'custom_js': args.custom_js,
-			'cookies': args.cookies
+            'cookies': args.cookies
         }
 
         return render_template('mobile_list.html',
@@ -725,7 +725,7 @@ class Pogom(Flask):
         visibility_flags = {
             'custom_css': args.custom_css,
             'custom_js': args.custom_js,
-			'cookies': args.cookies
+            'cookies': args.cookies
         }
 
         return render_template(
@@ -748,7 +748,7 @@ class Pogom(Flask):
         visibility_flags = {
             'custom_css': args.custom_css,
             'custom_js': args.custom_js,
-			'cookies': args.cookies
+            'cookies': args.cookies
         }
         if args.status_page_password is None:
             abort(404)
