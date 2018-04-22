@@ -176,6 +176,21 @@ def get_args():
     parser.add_argument('-mpm', '--medalpokemon',
                         help='Show notify for tiny rattata and big magikarp.',
                         action='store_true', default=False)
+    parser.add_argument('-hds', '--hidesearch',
+                        help='Hides search submenu.',
+                        action='store_true', default=False)
+    parser.add_argument('-hdm', '--hidemarkers',
+                        help='Hides markers submenu.',
+                        action='store_true', default=False)
+    parser.add_argument('-hdn', '--hidenotifications',
+                        help='Hides notifications submenu.',
+                        action='store_true', default=False)
+    parser.add_argument('-hdf', '--hidefavorites',
+                        help='Hides favorite locations submenu.',
+                        action='store_true', default=False)
+    parser.add_argument('-hdy', '--hidestyles',
+                        help='Hides style settings submenu.',
+                        action='store_true', default=False)
     parser.add_argument('-cs', '--captcha-solving',
                         help='Enables captcha solving.',
                         action='store_true', default=False)
@@ -589,6 +604,8 @@ def get_args():
     parser.add_argument('-cnb', '--customnavbar',
                         help=('Enable custom navbar.'),
                         action='store_true', default=False)
+    parser.add_argument('-cl', '--customlink', default=None,
+                        help='URL to query PGScout for Pokemon IV/CP.')
     parser.add_argument('-pgsu', '--pgscout-url', default=None,
                         help='URL to query PGScout for Pokemon IV/CP.')
     parser.add_argument('-lurl', '--lure-url', default=None,
@@ -1022,14 +1039,14 @@ def init_args(args):
         log.info("Cookie consent enabled")
     else:
         if not args.cookies:
-            log.info("Cookie consent disabled")
+		    log.info ("Cookie consent disabled")
 
     # Custom navbar enabled/disabled
     if args.customnavbar:
         log.info("Custom navbar enabled")
     else:
         if not args.customnavbar:
-            log.info("Custom navbar disabled")
+		    log.info ("Custom navbar disabled")
 
     # Prepare webhook whitelist - empty list means no restrictions
     args.webhook_whitelist = []
