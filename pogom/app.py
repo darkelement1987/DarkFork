@@ -372,7 +372,12 @@ class Pogom(Flask):
             'custom_js': args.custom_js,
             'cookies': args.cookies,
             'medalpokemon': args.medalpokemon,
-            'customnavbar': args.customnavbar
+			'customnavbar': args.customnavbar,
+			'hidemarkers': not args.hidemarkers,
+            'hidesearch': not args.hidesearch,
+            'hidenotifications': not args.hidenotifications,
+            'hidefavorites': not args.hidefavorites,
+            'hidestyles': not args.hidestyles
         }
 
         map_lat = False
@@ -397,7 +402,12 @@ class Pogom(Flask):
             show=visibility_flags,
             cookies=args.cookies,
             rarityFileName=args.rarity_filename,
-            customnavbar=args.customnavbar)
+			customnavbar=args.customnavbar,
+			hidesearch=args.hidesearch,
+            hidemarkers=args.hidemarkers,
+            hidenotifications=args.hidenotifications,
+            hidefavorites=args.hidefavorites,
+            hidestyles=args.hidestyles)
 
     def raw_data(self):
         # Make sure fingerprint isn't blacklisted.
@@ -699,7 +709,7 @@ class Pogom(Flask):
         visibility_flags = {
             'custom_css': args.custom_css,
             'custom_js': args.custom_js,
-            'cookies': args.cookies
+			'cookies': args.cookies
         }
 
         return render_template('mobile_list.html',
@@ -715,7 +725,7 @@ class Pogom(Flask):
         visibility_flags = {
             'custom_css': args.custom_css,
             'custom_js': args.custom_js,
-            'cookies': args.cookies
+			'cookies': args.cookies
         }
 
         return render_template(
@@ -738,15 +748,15 @@ class Pogom(Flask):
         visibility_flags = {
             'custom_css': args.custom_css,
             'custom_js': args.custom_js,
-            'cookies': args.cookies
+			'cookies': args.cookies
         }
         if args.status_page_password is None:
             abort(404)
 
-        return render_template(
-            'status.html',
-            show=visibility_flags,
-            cookies=args.cookies)
+        return render_template('status.html',
+                               show=visibility_flags,
+                               cookies=args.cookies
+                               )
 
     def post_status(self):
         args = get_args()
