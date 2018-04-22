@@ -753,10 +753,10 @@ class Pogom(Flask):
         if args.status_page_password is None:
             abort(404)
 
-        return render_template('status.html',
-                               show=visibility_flags,
-                               cookies=args.cookies
-                               )
+        return render_template(
+            'status.html',
+            show=visibility_flags,
+            cookies=args.cookies)
 
     def post_status(self):
         args = get_args()
