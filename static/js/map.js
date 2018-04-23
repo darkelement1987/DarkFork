@@ -2557,6 +2557,7 @@ function showGymDetails(id) { // eslint-disable-line no-unused-vars
         var topPart = gymLabel(result, false)
         sidebar.innerHTML = `
 		${topPart}
+{% if show.manualraids %}
 		<div><center>
 	<h3>Select Raid/Egg:</h3>
 	<p><select>
@@ -2599,6 +2600,7 @@ function showGymDetails(id) { // eslint-disable-line no-unused-vars
 	</div>
 	<p><button class="submit-raid-button" type="button"><i class="fa fa-binoculars" style="margin-right:10px;"></i>Submit Raid</button></p>
 	</center></div>
+{% endif %}
 		${pokemonHtml}`
 
         sidebarClose = document.createElement('a')
