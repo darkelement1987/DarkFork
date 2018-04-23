@@ -2545,7 +2545,6 @@ function showGymDetails(id) { // eslint-disable-line no-unused-vars
                     Gym Leader:<br>
                     ${pokemonIcon}<br>
                     <b>${result.guard_pokemon_name}</b>
-
                     <p style="font-size: .75em; margin: 5px;">
                         No additional gym information is available for this gym. Make sure you are collecting <a href="https://rocketmap.readthedocs.io/en/develop/extras/gyminfo.html">detailed gym info.</a>
                         If you have detailed gym info collection running, this gym's Pokemon information may be out of date.
