@@ -1114,10 +1114,6 @@ var StoreOptions = {
     'rarityNewSpawn': {
         default: 1,
         type: StoreTypes.Number
-    },
-    'manualRaids': {
-        default: false,
-        type: StoreTypes.Boolean
     }
 }
 
