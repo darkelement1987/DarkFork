@@ -176,6 +176,21 @@ def get_args():
     parser.add_argument('-mpm', '--medalpokemon',
                         help='Show notify for tiny rattata and big magikarp.',
                         action='store_true', default=False)
+    parser.add_argument('-hds', '--hidesearch',
+                        help='Hides search submenu.',
+                        action='store_true', default=False)
+    parser.add_argument('-hdm', '--hidemarkers',
+                        help='Hides markers submenu.',
+                        action='store_true', default=False)
+    parser.add_argument('-hdn', '--hidenotifications',
+                        help='Hides notifications submenu.',
+                        action='store_true', default=False)
+    parser.add_argument('-hdf', '--hidefavorites',
+                        help='Hides favorite locations submenu.',
+                        action='store_true', default=False)
+    parser.add_argument('-hdy', '--hidestyles',
+                        help='Hides style settings submenu.',
+                        action='store_true', default=False)
     parser.add_argument('-cs', '--captcha-solving',
                         help='Enables captcha solving.',
                         action='store_true', default=False)
