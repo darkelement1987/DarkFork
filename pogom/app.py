@@ -355,7 +355,7 @@ class Pogom(Flask):
             'custom_css': args.custom_css,
             'custom_js': args.custom_js,
             'medalpokemon': args.medalpokemon,
-            'manualraids': not args.manualraids
+            'manualraids': args.manualraids
         }
 
         map_lat = False
