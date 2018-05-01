@@ -3611,8 +3611,8 @@ $(function () {
 
     Array.prototype.diff = function (a) {
         return this.filter(function (i) {
-        return a.indexOf(i) === -1;
-        });
+            return a.indexOf(i) === -1
+        })
     }
 
     function generatePokemonExclude(value, invert) {
