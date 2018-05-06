@@ -43,6 +43,7 @@ var searchMarkerStyles
 
 var timestamp
 var excludedPokemon = []
+var pokemonWithImages = []
 var excludedPokemonByRarity = []
 var excludedRarity
 
