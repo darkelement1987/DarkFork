@@ -1083,6 +1083,10 @@ var StoreOptions = {
         default: false,
         type: StoreTypes.Boolean
     },
+    'hidepresets': {
+        default: [],
+        type: StoreTypes.JSON
+    },
     'showMedalRattata': {
         default: false,
         type: StoreTypes.Boolean
@@ -1115,6 +1119,7 @@ var StoreOptions = {
         default: 1,
         type: StoreTypes.Number
     }
+
 }
 
 var Store = {
