@@ -3440,10 +3440,10 @@ $(function () {
             reincludedPokemon = reincludedPokemon.concat(buffer).map(String)
             clearStaleMarkers()
             if (excludedPokemon.length === 1) {
-                $('.hidefilteractiv').text('*** No active Filter ***')
+                $('.hidefilteractiv').text('')
                 $('.hidefilteractiv').css('color', 'black')
             } else {
-                $('.hidefilteractiv').text('*** active Filter ***')
+                $('.hidefilteractiv').text('Filter/preset activated')
                 $('.hidefilteractiv').css('color', 'red')
             }
             Store.set('remember_select_exclude', excludedPokemon)
