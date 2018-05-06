@@ -879,17 +879,13 @@ var StoreOptions = {
         default: 0, // 0: none, 1: <=Common, 2: <=Uncommon, 3: <=Rare, 4: <=Very Rare, 5: <=Ultra Rare
         type: StoreTypes.Number
     },
-    'showParkRaidsOnly': {
-        default: false,
-        type: StoreTypes.Boolean
-    },
     'showRaids': {
         default: true,
         type: StoreTypes.Boolean
     },
-    'showActiveRaidsOnly': {
-        default: false,
-        type: StoreTypes.Boolean
+    'showRaidFilter': {
+        default: [],
+        type: StoreTypes.JSON
     },
     'showRaidMinLevel': {
         default: 1,
@@ -907,17 +903,13 @@ var StoreOptions = {
         default: true,
         type: StoreTypes.Boolean
     },
-    'showParkGymsOnly': {
-        default: false,
-        type: StoreTypes.Boolean
-    },
     'useGymSidebar': {
         default: true,
         type: StoreTypes.Boolean
     },
-    'showOpenGymsOnly': {
-        default: false,
-        type: StoreTypes.Boolean
+    'showGymFilter': {
+        default: [],
+        type: StoreTypes.JSON
     },
     'showTeamGymsOnly': {
         default: 0,

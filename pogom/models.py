@@ -50,7 +50,7 @@ args = get_args()
 flaskDb = FlaskDB()
 cache = TTLCache(maxsize=100, ttl=60 * 5)
 
-db_schema_version = 30
+db_schema_version = 31
 
 rarity_list = {'Common': 0, 'Uncommon': 1, 'Rare': 2, 'Very Rare': 3,
                'Ultra Rare': 4, 'New Spawn': 5}
@@ -495,6 +495,7 @@ class Gym(LatLongModel):
     slots_available = SmallIntegerField()
     enabled = BooleanField()
     park = BooleanField(default=False)
+    sponsor = SmallIntegerField(null=True)
     latitude = DoubleField()
     longitude = DoubleField()
     total_cp = SmallIntegerField()
@@ -639,6 +640,7 @@ class Gym(LatLongModel):
                               Gym.slots_available,
                               Gym.latitude,
                               Gym.longitude,
+                              Gym.sponsor,
                               Gym.last_modified,
                               Gym.last_scanned,
                               Gym.total_cp,
@@ -2514,6 +2516,8 @@ def parse_map(args, map_dict, scan_coords, scan_location, db_update_queue,
                             f.owned_by_team,
                         'park':
                             park,
+                        'sponsor':
+                            f.sponsor,
                         'guard_pokemon_id':
                             f.guard_pokemon_id,
                         'slots_available':
@@ -2545,6 +2549,8 @@ def parse_map(args, map_dict, scan_coords, scan_location, db_update_queue,
                         f.owned_by_team,
                     'park':
                     park,
+                    'sponsor':
+                        f.sponsor,
                     'guard_pokemon_id':
                         f.guard_pokemon_id,
                     'gender':
@@ -3970,6 +3976,13 @@ def database_migrate(db, old_ver):
         migrate(
             # Add `park` column to `gym`
             migrator.add_column('gym', 'park', BooleanField(default=False)))
+
+    if old_ver < 31:
+        migrate(
+            # Add `sponsor` column to `gym`
+            migrator.add_column('gym', 'sponsor',
+                                SmallIntegerField(null=True))
+        )
 
     # Always log that we're done.
     log.info('Schema upgrade complete.')
