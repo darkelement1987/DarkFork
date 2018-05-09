@@ -3669,8 +3669,6 @@ $(function () {
     }
 
     // Setup UI element interactions
-
-
     $('#gyms-switch').change(function () {
         var options = {
             'duration': 500
