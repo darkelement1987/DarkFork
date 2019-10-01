@@ -138,8 +138,6 @@ class Pokemon(LatLongModel):
     catch_prob_1 = DoubleField(null=True)
     catch_prob_2 = DoubleField(null=True)
     catch_prob_3 = DoubleField(null=True)
-    rating_attack = CharField(null=True, max_length=2)
-    rating_defense = CharField(null=True, max_length=2)
     weather_boosted_condition = SmallIntegerField(null=True)
     last_modified = DateTimeField(
         null=True, index=True, default=datetime.utcnow)
@@ -1510,11 +1508,7 @@ def database_migrate(db, old_ver):
             migrator.add_column('pokemon', 'catch_prob_2',
                                 DoubleField(null=True)),
             migrator.add_column('pokemon', 'catch_prob_3',
-                                DoubleField(null=True)),
-            migrator.add_column('pokemon', 'rating_attack',
-                                CharField(null=True, max_length=2)),
-            migrator.add_column('pokemon', 'rating_defense',
-                                CharField(null=True, max_length=2))
+                                DoubleField(null=True))
         )
 
     if old_ver < 22:
@@ -1582,8 +1576,8 @@ def database_migrate(db, old_ver):
             'individual_attack, individual_defense, individual_stamina, ' +
             'move_1, move_2, cp, cp_multiplier, weight, height, gender, ' +
             'form, costume, catch_prob_1, catch_prob_2, ' +
-            'catch_prob_3, rating_attack, ' +
-            'rating_defense, weather_boosted_condition ,last_modified ' +
+            'catch_prob_3, ' +
+            'weather_boosted_condition ,last_modified ' +
             'FROM `pokemon_old`;')
         db.execute_sql(
             'INSERT INTO `locationaltitude` SELECT ' +
